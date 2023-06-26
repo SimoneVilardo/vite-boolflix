@@ -1,13 +1,30 @@
 <script>
+import AppCard from './AppCard.vue';
+import { store } from '../store.js';
+
 export default {
+    components:{
+        AppCard
+    },
+
+    data() {
+        return {
+            store
+        }
+    },
+
 
 }
 </script>
 <template>
-    <div>
-        <h3>MAIN</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" v-for="(film, index) in store.myFilms" :key="index">
+                <AppCard :myFilm="film" />
+            </div>
+        </div>
     </div>
 </template>
 <style lang="scss" scoped>
-    
+
 </style>
