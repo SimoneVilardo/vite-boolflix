@@ -15,13 +15,16 @@ export default {
 </script>
 
 <template>
-    <div class="img_back" :style="{'background-image':`url(https://image.tmdb.org/t/p/w342${myFilm.poster_path})`}">
+    <div class="img_back" :style="myFilm.poster_path === null || myFilm.poster_path === undefined ? {'background-image':'url(https://st3.depositphotos.com/1322515/35964/v/600/depositphotos_359648638-stock-illustration-image-available-icon.jpg)'} : {'background-image':`url(https://image.tmdb.org/t/p/w342${myFilm.poster_path})`}">
         <div class="hover-card px-3">
             <div v-for="n in 5" :key="n" style="color: goldenrod;" class="fa-star" :class="(n <= Math.ceil(myFilm.vote_average / 2)) ? 'fas' : 'far'"></div>
-            <h2 style="color: red;">{{ myFilm.title || myFilm.name }}</h2>
-            <h3 style="color: white;">{{ myFilm.original_title || myFilm.original_name }}</h3>
-            <img :src="`../../node_modules/flagpack/flags/1x1/${myFilm.original_language}.svg`" alt="">
-            <span class="px-2" style="color: goldenrod;">{{ myFilm.original_language }}</span>
+            <div style="color: white;"><h4 style="color: red;">Title:</h4> {{ myFilm.title || myFilm.name }}</div>
+            <div style="color: white;"><h4 style="color: red;">Original Title:</h4>{{ myFilm.original_title || myFilm.original_name }}</div>
+            <div>
+                <span>Lenguage:</span>
+                <img class="px-2" :src="`../../node_modules/flagpack/flags/1x1/${myFilm.original_language}.svg`" alt="">
+                <span class="px-2" style="color: goldenrod;">{{ myFilm.original_language }}</span>
+            </div>
             <h4 style="color: goldenrod;">Plot:</h4>
             <p>{{ myFilm.overview }}</p>
         </div>
@@ -46,7 +49,12 @@ export default {
         background-color: black;
         color: #fff;
     }
+
+    h4{
+        font-weight: bold;
+    }
+
     p{
-        font-size: 10px;
+        font-size: 1px;
     }
 </style>
