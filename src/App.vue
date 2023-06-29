@@ -35,9 +35,8 @@ export default {
     }
   }
 }
-
-
 </script>
+
 <template>
   <div>
     <AppHeader @films="getFilms"/>
