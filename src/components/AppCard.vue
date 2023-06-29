@@ -55,6 +55,6 @@ export default {
     }
 
     p{
-        font-size: 1px;
+        font-size: 12px;
     }
 </style>
