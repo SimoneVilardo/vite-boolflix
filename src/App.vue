@@ -38,9 +38,13 @@ export default {
 </script>
 
 <template>
-  <div>
-    <AppHeader @films="getFilms"/>
-    <AppMain />
+  <div class="container-fluid bg-black">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10">
+        <AppHeader @films="getFilms"/>
+        <AppMain />
+      </div>
+    </div>
   </div>
 </template>
 

@@ -18,8 +18,7 @@ export default {
 <template>
     <div class="container">
         <div class="row">
-            ciclo l'array per mostrare 
-            <div class="col-12" v-for="(film, index) in store.myFilms" :key="index">
+            <div class="col-4 mb-4 d-flex flex-wrap" v-for="(film, index) in store.myFilms" :key="index">
                 <AppCard :myFilm="film" />
             </div>
         </div>
