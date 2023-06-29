@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="container" style="color: red;">
-        <div class="row d-flex justify-content-between">
+        <div class="row py-2 d-flex justify-content-between">
             <div class="col-6">
                 <h1>BOOLFLIX</h1>
             </div>
@@ -25,13 +25,11 @@ export default {
 
 <style lang="scss" scoped>
     h1{
-        font-size: 50px;
+        font-size: 60px;
         font-weight: bold;
     }
 
     button, input{
-        color: red;
-        background-color: gray;
         font-weight: bold;
     }
 </style>
